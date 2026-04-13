@@ -13,7 +13,7 @@ import { TimePlugin } from "./core/time";
 import { HeatmapPlugin } from "./core/heatmap";
 import { LogCapture } from "./core/logger";
 
-const DEFAULT_ENDPOINT = "https://api.alpha-tracker.ir/api/events";
+const DEFAULT_ENDPOINT = "https://api.alphana.ir/api/events";
 
 const DEFAULTS = {
   endpoint: DEFAULT_ENDPOINT,

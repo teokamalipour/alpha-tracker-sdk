@@ -101,7 +101,7 @@ All options are optional.
 
 | Option             | Type                            | Default                                   | Description                                                         |
 | ------------------ | ------------------------------- | ----------------------------------------- | ------------------------------------------------------------------- |
-| `endpoint`         | `string`                        | `https://api.alpha-tracker.ir/api/events` | Override only when self-hosting                                     |
+| `endpoint`         | `string`                        | `https://api.alphana.ir/api/events` | Override only when self-hosting                                     |
 | `secretKey`        | `string`                        | —                                         | App secret key from the dashboard — sent as `Authorization: Bearer` |
 | `sessionId`        | `string`                        | auto                                      | Override the auto-generated session UUID                            |
 | `trackNavigation`  | `boolean`                       | `true`                                    | Intercept `pushState` / `popstate` for SPA route changes            |

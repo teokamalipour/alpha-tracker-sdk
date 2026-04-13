@@ -3,7 +3,7 @@
 export interface TrackerConfig {
   /**
    * URL to POST events to.
-   * Defaults to `https://api.alpha-tracker.ir/api/events` — override only if self-hosting.
+   * Defaults to `https://api.alphana.ir/api/events` — override only if self-hosting.
    */
   endpoint?: string;
   /**
