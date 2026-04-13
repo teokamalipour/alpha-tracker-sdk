@@ -1,7 +1,10 @@
 // ─── Config ───────────────────────────────────────────────────────────────────
 
 export interface TrackerConfig {
-  /** URL endpoint to POST events to (optional). */
+  /**
+   * URL to POST events to.
+   * Defaults to `https://api.alpha-tracker.ir/api/events` — override only if self-hosting.
+   */
   endpoint?: string;
   /**
    * App secret key obtained from the UserTracker dashboard.

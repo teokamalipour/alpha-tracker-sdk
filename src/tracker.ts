@@ -13,7 +13,10 @@ import { TimePlugin } from "./core/time";
 import { HeatmapPlugin } from "./core/heatmap";
 import { LogCapture } from "./core/logger";
 
+const DEFAULT_ENDPOINT = "https://api.alpha-tracker.ir/api/events";
+
 const DEFAULTS = {
+  endpoint: DEFAULT_ENDPOINT,
   trackNavigation: true,
   trackTime: true,
   trackHeatmap: true,
@@ -44,6 +47,7 @@ type SubscriberFn = (event: TrackerEvent) => void;
 type ResolvedConfig = Required<
   Pick<
     TrackerConfig,
+    | "endpoint"
     | "trackNavigation"
     | "trackTime"
     | "trackHeatmap"
@@ -78,14 +82,12 @@ export class UserTracker {
 
     // Validate endpoint URL up front so the error is thrown at construction
     // time rather than silently failing during a network request.
-    if (this.cfg.endpoint) {
-      try {
-        new URL(this.cfg.endpoint);
-      } catch {
-        throw new Error(
-          `[user-tracker] Invalid endpoint URL: "${this.cfg.endpoint}"`,
-        );
-      }
+    try {
+      new URL(this.cfg.endpoint);
+    } catch {
+      throw new Error(
+        `[alpha-tracker] Invalid endpoint URL: "${this.cfg.endpoint}"`,
+      );
     }
 
     this.session = {

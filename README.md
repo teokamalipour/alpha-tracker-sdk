@@ -18,7 +18,6 @@ yarn add alpha-tracker
 import { UserTracker } from "alpha-tracker";
 
 const tracker = new UserTracker({
-  endpoint: "https://your-backend.com/api/events",
   secretKey: import.meta.env.VITE_TRACKER_SECRET,
 });
 
@@ -36,7 +35,6 @@ export default function App({ Component, pageProps }) {
   return (
     <UserTrackerProvider
       config={{
-        endpoint: process.env.NEXT_PUBLIC_TRACKER_ENDPOINT,
         secretKey: process.env.NEXT_PUBLIC_TRACKER_SECRET,
       }}
     >
@@ -59,7 +57,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <UserTrackerProvider
       config={{
-        endpoint: process.env.NEXT_PUBLIC_TRACKER_ENDPOINT,
         secretKey: process.env.NEXT_PUBLIC_TRACKER_SECRET,
       }}
     >
@@ -104,7 +101,7 @@ All options are optional.
 
 | Option             | Type                            | Default | Description                                                         |
 | ------------------ | ------------------------------- | ------- | ------------------------------------------------------------------- |
-| `endpoint`         | `string`                        | —       | URL to POST events to (`/api/events` on your backend)               |
+| `endpoint`         | `string`                        | `https://api.alpha-tracker.ir/api/events` | Override only when self-hosting          |
 | `secretKey`        | `string`                        | —       | App secret key from the dashboard — sent as `Authorization: Bearer` |
 | `sessionId`        | `string`                        | auto    | Override the auto-generated session UUID                            |
 | `trackNavigation`  | `boolean`                       | `true`  | Intercept `pushState` / `popstate` for SPA route changes            |
