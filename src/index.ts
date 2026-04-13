@@ -1,5 +1,6 @@
 // Core
 export { UserTracker } from "./tracker";
+export { DEFAULT_ENDPOINT } from "./tracker";
 export { LogCapture } from "./core/logger";
 
 // Renderer
